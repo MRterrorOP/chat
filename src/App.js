@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import {React, useEffect, useState} from "react";
+import { Route,  Routes } from "react-router-dom";
+import AuthenticationPg from '../src/pages/Authentication'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+import ProtectedRoute from '../src/routes/ProtectedRoute'
+import ChatRoom from '../src/pages/ChatRoom'
+
+import Homepage from "../src/pages/Homepage";
+
+
+function App(){
+  console.log('calling app')
+ 
+  
+  return(
+  <>
+  
+
+      <Routes>
+        {/*  Public Page   */}
+        <Route  path="/authentication" element={<AuthenticationPg/>}/>
+        <Route  path="/" element={<Homepage/>} />
+        {/* private page  */}
+        <Route element={<ProtectedRoute  />}>
+          <Route  path="/chatroom" element={<ChatRoom />} />
+        </Route>
+
+      </Routes>
+    
+  </>
   );
 }
-
 export default App;
