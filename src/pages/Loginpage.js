@@ -36,7 +36,8 @@ function LoginPage(props){
   // Function to create a new user authentication entry in Firebase
  
     return(
-      <div className="relative rounded border border-1 border-gray-200 px-4 pb-10 md:w-[400px] md:h-[600px] md:flex md:items-center md:justify-center md:flex-col">
+
+      <div className="loginBox relative mx-auto w-4/5 mt-12 flex justify-center flex-col   rounded border border-1 border-gray-200 px-4 pb-10 md:w-[400px] md:h-[600px] md:flex md:items-center md:mt-12  md:justify-center md:flex-col">
         
         <h1 className="text-lg text-center pt-4  md:text-2xl md:mb-4" >Friend Circle</h1>
         <p className="absolute top-2 right-4 hover:text-cyan-500 hover:underline cursor-pointer" onClick={props.handleToggle}>sing up?</p>

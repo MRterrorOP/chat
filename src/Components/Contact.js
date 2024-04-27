@@ -1,9 +1,8 @@
-export default function Contact( props ){
+function Contact(props){
   return(
-    <div  className="w-11/12 pl-2 flex relative items-center bg-blue-400 bg-opacity-20  rounded-lg rounded h-16 m-2">
-      <img src={props.imagePath}   className="rounded-full w-12 h-12 ma-0.5  "   alt="profile"/>
-      <p className="absolute left-16 top-3"> {props.profileName}</p>
-      {console.log(props.profileName)}
-    </div>
+   <div className="bg-gradient-to-br from-opacity-10 to-opacity-10 bg-white bg-opacity-10 
+   w-3/4 h-12 pl-2 mx-auto backdrop-filter backdrop-blur-lg border
+   border-slate-600  rounded-lg shadow-lg mb-3"> {props.name}</div>
   )
 }
+export default Contact;

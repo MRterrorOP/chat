@@ -2,13 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Optional: Adjusts the height to full viewport height */
-  margin: 0; /* Optional: Removes default margin */
-  padding: 0; /* Optional: Removes default padding */
+.loginBox {
+  height: 500px;
+}
+
+.background {
+  background-image: url("/home/anuj/PracticeBootStrap/chat/public/background.png");
+  background-size: cover;
+  backdrop-filter: blur(10px);
+  width: 100vw;
+  height: 100vh;
+}
+.glass {
+  background: linear-gradient(
+    135deg,
+    rgb(255, 255, 255, 0.1),
+    rgba(231, 223, 223, 0.1)
+  );
+
+  width: 30vw;
+  height: 100vh;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgb(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgb(o, 0, 0, 0.37);
 }
 h1 {
   font-family: "Anta", sans-serif;
@@ -140,6 +158,29 @@ form[action$="destroy"] button {
   border-top: 1px solid #e3e3e3;
   order: 1;
   line-height: 1;
+}
+/* Define gradient backgrounds for different sections */
+.section1 {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1));
+  /* Other styles for section 1 */
+}
+
+.section2 {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.8)
+  );
+  /* Other styles for section 2 */
+}
+
+.section3 {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.6)
+  );
+  /* Other styles for section 3 */
 }
 
 #sidebar h1::before {
