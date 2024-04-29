@@ -1,7 +1,7 @@
 import {React} from "react";
 import { Route,  Routes } from "react-router-dom";
 import AuthenticationPg from '../src/pages/Authentication'
-
+import { PopUpScreen } from "./Components/PopUpForUserdetail";
 import ProtectedRoute from '../src/routes/ProtectedRoute'
 import ChatRoom from '../src/pages/ChatRoom'
 
@@ -21,6 +21,7 @@ function App(){
         <Route  path="/authentication" element={<AuthenticationPg/>}/>
         <Route  path="/" element={<Homepage/>} />
         {/* private page  */}
+        <Route  path="/popscreen" element={<PopUpScreen/>} />
         <Route element={<ProtectedRoute  />}>
           <Route  path="/chatroom" element={<ChatRoom />} />
         </Route>

@@ -58,6 +58,26 @@ const Userlist = [
     name: 'Clementina DuBuque',
     username: 'Moriah.Stanton',
     email: 'Rey.Padberg@karina.biz'
+  },
+  {
+    id: 11,
+    name: 'Nicholas Pooran',
+    username: 'nicholas',
+    email: 'Sherwood@help.me'
+  },
+  {
+    id: 12,
+    name: 'Nicholas Pooran',
+    username: 'nicholas',
+    email: 'Sherwood@help.me'
+  },
+  {
+    id: 13,
+    name: 'Nicholas Pooran',
+    username: 'nicholas',
+    email: 'Sherwood@help.me'
   }
+  
+  
 ];
 export default Userlist;

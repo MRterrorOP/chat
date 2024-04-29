@@ -8,6 +8,7 @@ export default function ProtectedRoute() {
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
+      console.log(user.displayName)
       setIsLoading(false); // Once auth state is resolved, set isLoading to false
     });
 

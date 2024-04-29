@@ -10,6 +10,7 @@ module.exports = {
           500: '#d4b3ff', // Your custom color
         },
       },
+      
     },
   },
   plugins: [],

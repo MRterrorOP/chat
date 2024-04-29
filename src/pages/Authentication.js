@@ -11,6 +11,7 @@ export default function AuthenticationPg(){
   const location = useLocation();
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
+      
       setIsLoading(false); // Once auth state is resolved, set isLoading to false
     });
 
