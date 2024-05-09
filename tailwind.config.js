@@ -1,19 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       colors: {
-         header: {
-          500: '#d4b3ff', // Your custom color
+        header: {
+          500: "#d4b3ff", // Your custom color
         },
       },
-      
+      height: {
+        10: "10%",
+      },
     },
   },
   plugins: [],
-}
-
-
+};
