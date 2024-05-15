@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { auth } from "../utils/firebase";
-import { MessageViewPort } from "./MessageViewPort";
+import { MessageViewPort } from "../Components/MessageViewPort";
 import Contacts from "../Components/Contacts";
 import { PopUpScreen } from "../Components/PopUpForUserdetail";
 import NavBar from "../Components/NavBar";
@@ -12,11 +12,15 @@ function ChatRoom() {
   const [popup, SetPop] = useState(false);
   const [navbar, SetNavBar] = useState(false);
   const [trigerPopup, setTrigerPopup] = useState(false);
+  const [displayName, setDisplayName] = useState("");
+  const [userUID, setUserUID] = useState("");
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setProfileImg(user.photoURL);
-      console.log(user.photoURL);
+      setDisplayName(user.displayName);
+      setUserUID(user.uid);
+
       if (user.displayName == null) {
         SetContact(false);
         SetNavBar(false);
@@ -45,8 +49,13 @@ function ChatRoom() {
       <Contacts triger={contact} />
       <PopUpScreen triger={popup} />
       <NavBar trigerProfile={handlePopUP} triger={navbar} />
-      <ProfilePopup triger={trigerPopup} img={Profilimg} />
-      <MessageViewPort triger={MessageView} />
+      <ProfilePopup triger={trigerPopup} />
+      <MessageViewPort
+        triger={MessageView}
+        userUID={userUID}
+        userPhotoUrl={Profilimg}
+        userName={displayName}
+      />
     </div>
   );
 }

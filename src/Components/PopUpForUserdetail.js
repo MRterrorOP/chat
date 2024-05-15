@@ -66,6 +66,7 @@ export function PopUpScreen(props) {
               console.log("profilename and ImageUrl   updated successfully");
               console.log("ProfileName", username);
               console.log("imgUrl", data.secure_url);
+              window.location.reload();
             })
             .catch((error) => {
               console.log(error.message, error.message);
@@ -79,6 +80,7 @@ export function PopUpScreen(props) {
           .then(() => {
             console.log("profilename updated successfully");
             console.log("ProfileName", username);
+            window.location.reload();
           })
           .catch((error) => {
             console.log(error.message, error.message);
