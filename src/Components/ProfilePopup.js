@@ -6,8 +6,6 @@ export const ProfilePopup = (props) => {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setProfileImg(user.photoURL);
-
-      // Once auth state is resolved, set isLoading to false
     });
 
     return unsubscribe;

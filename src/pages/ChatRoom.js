@@ -26,13 +26,10 @@ function ChatRoom() {
         SetNavBar(false);
         SetMessageView(false);
         SetPop(true);
-
-        console.log("popup");
       } else {
         SetContact(true);
         SetNavBar(true);
         SetMessageView(true);
-        console.log("contact");
       }
       // Once auth state is resolved, set isLoading to false
     });
@@ -40,7 +37,6 @@ function ChatRoom() {
     return unsubscribe;
   }, []);
   const handlePopUP = () => {
-    console.log("handlePopUp");
     setTrigerPopup(!trigerPopup);
   };
 

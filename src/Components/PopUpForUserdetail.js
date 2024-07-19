@@ -12,7 +12,7 @@ export function PopUpScreen(props) {
   const [username, SetUsername] = useState("");
   const [image, setImage] = useState("");
   const [imageUrl, setImageUrl] = useState("");
-
+  console.log("popUpUser called");
   let green = "bg-green-400";
   let indigo = "bg-indigo-400";
 
@@ -93,10 +93,11 @@ export function PopUpScreen(props) {
   //function for changing color of img input filled label
   const ChangeInputFilledColor = (event) => {
     const file = event.target.files[0];
-
+    console.log("calling changeInput color");
     SetfileUpload(false);
-
+    console.log("setfileupload false");
     if (!file == "") {
+      console.log("first if work");
       if (file.type.includes("image")) {
         console.log("file upload and now changing color");
         SetfileUpload(true);

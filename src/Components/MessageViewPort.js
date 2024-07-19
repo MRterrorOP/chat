@@ -5,11 +5,9 @@ import Message from "./Message";
 
 export const MessageViewPort = (props) => {
   const { triger, userUID, userPhotoUrl, userName } = props;
-
   const [IsMessageChange, setIsMessageChange] = useState(true);
   const [inputValue, setInputValue] = useState("");
   const [messages, setMessages] = useState("");
-
   useEffect(() => {
     const starCountRef = ref(database, "messages");
     const unsubscribe = onValue(starCountRef, (snapshot) => {
@@ -23,7 +21,6 @@ export const MessageViewPort = (props) => {
       for (let i = 0; i < arrayData.length - 6; i++) {
         ActualMessages.push(arrayData[i]);
       }
-      console.log(ActualMessages);
       setMessages(ActualMessages);
     });
 
@@ -34,6 +31,7 @@ export const MessageViewPort = (props) => {
   }, [IsMessageChange]);
 
   const SentMessageToDb = () => {
+    console.log("sentMessage to db function is initializing ");
     const currentDate = new Date();
     // Get the current hour, minute, and second
     const dd = currentDate.getDate();
@@ -70,15 +68,20 @@ export const MessageViewPort = (props) => {
       className="absolute top-[10%] justify-center  items-center flex flex-col  left-1/4 bg-white bg-gradient-to-br from-opacity-10 to-opacity-10 bg-opacity-10 w-3/4 h-[90%] backdrop-filter content-center backdrop-blur-[2px] border
       border-slate-600/20  rounded-lg shadow-lg"
     >
-      <div className="w-[98%] mt-1   h-[80vh] rounded ">
+      <div
+        id="message-container"
+        className="w-[98%]   mt-1 overflow-scroll h-[80vh] rounded "
+      >
+        {/* here we check if messages are Array type then we use map function */}
         {Array.isArray(messages) &&
-          messages.map((element) => (
+          messages.map((element, index, messages) => (
             <Message
               key={element[0]}
               userPhotoUrl={element[1].userPhotoUrl}
               message={element[1].message}
               time={element[1].time}
               userName={element[1].userName}
+              lastIteration={index === messages.length - 1 ? true : false}
             />
           ))}
       </div>
@@ -93,7 +96,6 @@ export const MessageViewPort = (props) => {
           }}
           onKeyDown={(e) => {
             if (e.key === "Enter") {
-              console.log("Enter is clicked");
               SentMessageToDb();
               setInputValue("");
             }
