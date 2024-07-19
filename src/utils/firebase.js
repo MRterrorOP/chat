@@ -14,13 +14,12 @@ const firebaseConfig = {
   storageBucket: "firstproject-b7783.appspot.com",
   messagingSenderId: "818727816660",
   appId: "1:818727816660:web:2a5b3bfe6f94bd9bd31a41",
-  databaseURL: "https://firstproject-b7783-default-rtdb.firebaseio.com"
- 
+  databaseURL: "https://firstproject-b7783-default-rtdb.firebaseio.com",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const auth= getAuth(app);  
+const auth = getAuth(app);
 const database = getDatabase(app);
 
-export {auth, database};
+export { auth, database, app };
